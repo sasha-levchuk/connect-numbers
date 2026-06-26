@@ -17,8 +17,9 @@ font_size = 33
 font_size = 42
 
 [node name="Main" type="TileMapLayer" unique_id=1094436552]
-position = Vector2(228, 0)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAQABAAEAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAAEAAAAAAAAAAQAAAAIAAAAAAAAAAQABAAIAAAAAAAAAAQACAAIAAAAAAAAAAQADAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQACAAMAAAAAAAAAAQABAAMAAAAAAAAAAQAAAAMAAAAAAAAAAQAAAAQAAAAAAAAAAQABAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQA=")
+position = Vector2(142, 160)
+scale = Vector2(1.2442508, 1.2442508)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAQABAAEAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAAEAAAAAAAAAAQAAAAIAAAAAAAAAAQABAAIAAAAAAAAAAQACAAIAAAAAAAAAAQADAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQACAAMAAAAAAAAAAQABAAMAAAAAAAAAAQAAAAMAAAAAAAAAAQAAAAQAAAAAAAAAAQABAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAAAAUAAAAAAAAAAQABAAUAAAAAAAAAAQACAAUAAAAAAAAAAQADAAUAAAAAAAAAAQAEAAUAAAAAAAAAAQAEAAYAAAAAAAAAAQADAAYAAAAAAAAAAQACAAYAAAAAAAAAAQABAAYAAAAAAAAAAQAAAAYAAAAAAAAAAQAAAAcAAAAAAAAAAQABAAcAAAAAAAAAAQACAAcAAAAAAAAAAQADAAcAAAAAAAAAAQAEAAcAAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_wuxof")
 script = ExtResource("1_0xm2m")
 
@@ -28,10 +29,10 @@ position = Vector2(324, 316)
 zoom = Vector2(0.7, 0.7)
 
 [node name="Label" type="Label" parent="." unique_id=1570018422]
-offset_left = 664.0
-offset_top = 28.0
-offset_right = 899.0
-offset_bottom = 86.0
+offset_left = 94.03253
+offset_top = -72.33269
+offset_right = 329.03253
+offset_bottom = -14.332687
 text = "max number:"
 label_settings = SubResource("LabelSettings_wuxof")
 horizontal_alignment = 1
@@ -39,9 +40,9 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=796297341]
 offset_left = 23.0
-offset_top = -71.0
-offset_right = 258.0
-offset_bottom = -13.0
+offset_top = -122.16186
+offset_right = 610.0
+offset_bottom = -64.16186
 text = "connect the squares to add numbers"
 label_settings = SubResource("LabelSettings_wuxof")
 horizontal_alignment = 1
@@ -49,17 +50,18 @@ vertical_alignment = 1
 
 [node name="MaxNumLabel" type="Label" parent="." unique_id=996947795]
 unique_name_in_owner = true
-offset_left = 659.0
-offset_top = 94.0
-offset_right = 909.0
-offset_bottom = 152.0
+offset_left = 336.7489
+offset_top = -73.13638
+offset_right = 586.7488
+offset_bottom = -15.136383
 text = "0"
 label_settings = SubResource("LabelSettings_0xm2m")
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="." unique_id=909557032]
 z_index = -1
-offset_right = 640.0
-offset_bottom = 642.0
+offset_left = -21.44226
+offset_top = -15.270241
+offset_right = 661.44226
+offset_bottom = 1044.8055
 mouse_filter = 2
