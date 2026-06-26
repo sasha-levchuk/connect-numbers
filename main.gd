@@ -90,7 +90,7 @@ func unclick():
 	for square: Square in connected_squares:
 		sum += square.value
 	var last_square := connected_squares.pop_back() as Square
-	var exponent := Utils.log2(sum)
+	var exponent := log2(sum)
 	last_square.value = 2 ** exponent
 	update_square(last_square)
 	last_square.outline.hide()
@@ -103,7 +103,7 @@ func unclick():
 			if square.input_pickable \
 			and not square in connected_squares \
 			and not square == last_square \
-			and Utils.log2(square.value) < max_exponent - SPAWN_RANGE - REDUCTION_FROM_MAX:
+			and log2(square.value) < max_exponent - SPAWN_RANGE - REDUCTION_FROM_MAX:
 				connected_squares.append(square)
 				prints('deleting', square.value)
 	
@@ -169,7 +169,7 @@ func highlight_available_connections_around(square: Square):
 
 
 func update_square(square: Square):
-	var exponent := Utils.log2(square.value)
+	var exponent := log2(square.value)
 	square.number_color_fill.color = colors[exponent % colors.size()]
 	var reduced := square.value
 	var order := 0
@@ -184,3 +184,6 @@ func make_random(square: Square):
 	square.value = 2 ** randi_range(min_power, min_power + SPAWN_RANGE)
 	update_square(square)
 
+
+static func log2(x: int) -> int:
+	return ceili( log(x) / log(2.0) )
