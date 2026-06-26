@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cwaxd25odo862"]
+
+[ext_resource type="Script" uid="uid://dyrdeq8f310b3" path="res://square.gd" id="1_xncbd"]
+[ext_resource type="Texture2D" uid="uid://chgcuiaui3u0q" path="res://icon.svg" id="2_vp4b8"]
+[ext_resource type="PackedScene" uid="uid://bldyx07c3avp" path="res://white square 128x128.tscn" id="3_n04cd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xncbd"]
+blend_mode = 1
+
+[sub_resource type="SystemFont" id="SystemFont_2hici"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_wuxof"]
+font = SubResource("SystemFont_2hici")
+font_size = 42
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Square" type="Area2D" unique_id=110475012 node_paths=PackedStringArray("outline", "highlight", "connection", "label", "number_color_fill")]
+scale = Vector2(0.9423709, 0.9423709)
+script = ExtResource("1_xncbd")
+outline = NodePath("Outline")
+highlight = NodePath("Highlight")
+connection = NodePath("Connection")
+label = NodePath("Label")
+number_color_fill = NodePath("Icon/NumberColorFill")
+metadata/_custom_type_script = "uid://dyrdeq8f310b3"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=695809483]
+polygon = PackedVector2Array(-58.363438, -44.568443, -44.568443, -58.363438, 43.50729, -59.42459, 59.42459, -44.568443, 58.363438, 42.446136, 44.568443, 59.42459, -43.50729, 58.363438, -59.42459, 44.568443)
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=1446507214]
+unique_name_in_owner = true
+visible = false
+clip_children = 1
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("2_vp4b8")
+
+[node name="ColorFill" parent="Outline" unique_id=1399942096 instance=ExtResource("3_n04cd")]
+
+[node name="Highlight" type="Sprite2D" parent="." unique_id=2119619043]
+unique_name_in_owner = true
+visible = false
+clip_children = 1
+scale = Vector2(0.9723162, 0.9723162)
+texture = ExtResource("2_vp4b8")
+
+[node name="ColorFill" parent="Highlight" unique_id=1025504480 instance=ExtResource("3_n04cd")]
+color = Color(0, 1, 0, 0.5019608)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1611836418]
+clip_children = 2
+scale = Vector2(0.9220397, 0.9220397)
+texture = ExtResource("2_vp4b8")
+
+[node name="LogoCoverup" type="Polygon2D" parent="Icon" unique_id=577098669]
+scale = Vector2(1.0000002, 1.0000002)
+color = Color(0.21176471, 0.23921569, 0.32156864, 1)
+polygon = PackedVector2Array(-47.185925, -43.733295, -14.9613905, -52.940304, 42.582417, -46.035046, 56.392933, -10.357885, 52.940304, 37.978912, 43.733295, 54.09118, -17.263142, 51.78943, -41.43154, 47.185925, -51.78943, 8.056133, -52.940304, -27.621029)
+
+[node name="Pimpek" type="Polygon2D" parent="Icon" unique_id=1854587013]
+visible = false
+scale = Vector2(1.0000002, 1.0000002)
+color = Color(1, 0.8156863, 0.6862745, 1)
+polygon = PackedVector2Array(-21.866642, 5.7543797, -27.621029, 6.905257, -33.37541, 8.056133, -36.828037, 12.659637, -39.12979, 18.414019, -40.280666, 26.470152, -37.978912, 33.37541, -33.37541, 39.12979, -23.017523, 42.582417, -17.263142, 42.582417, -11.508761, 39.12979, -4.6035047, 44.88417, 3.4526286, 48.3368, 10.357885, 49.487675, 16.112267, 48.3368, 20.71577, 44.88417, 24.1684, 40.280666, 25.319275, 36.828037, 26.470152, 32.224533, 26.470152, 25.319275, 25.319275, 19.564896, 19.564896, 12.659637, 13.810514, 9.207009, 17.263142, -1.1508762, 19.564896, -5.7543807, 23.017523, -11.508761, 26.470152, -16.112267, 31.073656, -20.71577, 34.526283, -19.564896, 37.978912, -23.017523, 40.280666, -28.771904, 40.280666, -33.37541, 40.280666, -39.12979, 39.12979, -43.733295, 37.978912, -48.3368, 35.677162, -49.487675, 31.073656, -51.78943, 26.470152, -51.78943, 23.017523, -51.78943, 16.112267, -49.487675, 12.659637, -48.3368, 9.207009, -43.733295, 8.056133, -40.280666, 6.905257, -36.828037, 9.207009, -34.526283, 5.7543807, -31.073656, 3.4526277, -26.470146, 0, -24.168394, -2.3017519, -20.715767, -5.7543797, -16.112263, -8.056131, -11.5087595, -10.357883, -6.9052553, -11.5087595, -1.1508759, -12.659636, 3.4526277, -14.961387, 9.207007)
+
+[node name="NumberColorFill" parent="Icon" unique_id=2012439888 instance=ExtResource("3_n04cd")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.4862745)
+material = SubResource("CanvasItemMaterial_xncbd")
+scale = Vector2(1.084552, 1.084552)
+color = Color(1, 0, 0, 1)
+
+[node name="Hover" parent="Icon" unique_id=950263173 instance=ExtResource("3_n04cd")]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(1.0845522, 1.0845522)
+color = Color(1, 1, 1, 0.09019608)
+
+[node name="Connection" type="Line2D" parent="." unique_id=332433238]
+unique_name_in_owner = true
+z_index = -1
+points = PackedVector2Array(0, 0, 0, 0)
+
+[node name="Label" type="Label" parent="." unique_id=753425984]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.179977
+offset_top = -55.179977
+offset_right = 55.179977
+offset_bottom = 55.179977
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "1"
+label_settings = SubResource("LabelSettings_wuxof")
+horizontal_alignment = 1
+vertical_alignment = 1

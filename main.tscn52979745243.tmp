@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://bctu1lds2kf51"]
+
+[ext_resource type="Script" uid="uid://crqr276wihcwo" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cwaxd25odo862" path="res://square.tscn" id="1_ig7tw"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0xm2m"]
+scenes/1/scene = ExtResource("1_ig7tw")
+
+[sub_resource type="TileSet" id="TileSet_wuxof"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetScenesCollectionSource_0xm2m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wuxof"]
+font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 42
+
+[node name="Main" type="TileMapLayer" unique_id=1094436552]
+position = Vector2(228, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAQABAAEAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQACAAEAAAAAAAAAAQADAAEAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAEAAEAAAAAAAAAAQAAAAIAAAAAAAAAAQABAAIAAAAAAAAAAQACAAIAAAAAAAAAAQADAAIAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQACAAMAAAAAAAAAAQABAAMAAAAAAAAAAQAAAAMAAAAAAAAAAQAAAAQAAAAAAAAAAQABAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_wuxof")
+script = ExtResource("1_0xm2m")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=299693783]
+visible = false
+position = Vector2(324, 316)
+zoom = Vector2(0.7, 0.7)
+
+[node name="Label" type="Label" parent="." unique_id=1570018422]
+offset_left = 664.0
+offset_top = 28.0
+offset_right = 899.0
+offset_bottom = 86.0
+text = "max number:"
+label_settings = SubResource("LabelSettings_wuxof")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxNumLabel" type="Label" parent="." unique_id=996947795]
+unique_name_in_owner = true
+offset_left = 659.0
+offset_top = 94.0
+offset_right = 909.0
+offset_bottom = 152.0
+text = "0"
+label_settings = SubResource("LabelSettings_0xm2m")
+horizontal_alignment = 1
+vertical_alignment = 1
