@@ -2,11 +2,6 @@ extends TileMapLayer
 
 const SPAWN_RANGE := 4
 const REDUCTION_FROM_MAX := 3
-var max_exponent := 0
-var is_dragging := false
-var square_hovered: Square
-var connected_squares: Array[Square]
-var squares: Dictionary[Vector2i, Square]
 const order_letters := ['', 'k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y', 'R', 'Q']
 const colors := [
 	Color(0.0, 0.0, 0.0, 1.0),
@@ -20,6 +15,14 @@ const colors := [
 	Color(0.83, 0.1, 0.83, 1.0),
 	Color(0.5, 0.0, 1.0, 1.0),
 ]
+
+var max_exponent := 0
+var is_dragging := false
+#var square_hovered: Square
+var connected_squares: Array[Square]
+var squares: Dictionary[Vector2i, Square]
+
+@export var camera: Camera2D
 
 
 func _ready() -> void:
@@ -40,13 +43,14 @@ func connect_squares_at_start(square: Square):
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
-			if square_hovered:
-				_on_square_clicked(square_hovered)
+			_on_click()
 		else:
 			unclick()
 
 
-func _on_square_clicked(square: Square):
+func _on_click():
+	var square: Square = squares.get(local_to_map(get_local_mouse_position()))
+	if not square or not square.input_pickable: return
 	is_dragging = true
 	square.outline.show()
 	connected_squares.append(square)
@@ -54,25 +58,22 @@ func _on_square_clicked(square: Square):
 
 
 func _on_square_hovered(square: Square):
-	square_hovered = square
-	if is_dragging:
-		if square in connected_squares:
-			if connected_squares.size() > 1 and square == connected_squares[-2]:
-				var last_square := connected_squares.pop_back() as Square
-				last_square.outline.hide()
-				last_square.connection.hide()
-				highlight_available_connections_around(square)
-			return
-		if not square in highlighted: return
-		square.connect_to(connected_squares[-1])
-		connected_squares.append(square)
-		highlight_available_connections_around(square)
-		square.outline.show()
+	if not is_dragging: return
+	if square in connected_squares:
+		if connected_squares.size() > 1 and square == connected_squares[-2]:
+			var last_square := connected_squares.pop_back() as Square
+			last_square.outline.hide()
+			last_square.connection.hide()
+			highlight_available_connections_around(square)
+		return
+	if not square in highlighted: return
+	square.connect_to(connected_squares[-1])
+	connected_squares.append(square)
+	highlight_available_connections_around(square)
+	square.outline.show()
 
 
-func _on_square_unhovered(square: Square): 
-	if square == square_hovered:
-		square_hovered = null
+func _on_square_unhovered(square: Square): pass
 
 
 func unclick():

@@ -13,6 +13,8 @@ sources/0 = SubResource("TileSetScenesCollectionSource_0xm2m")
 [sub_resource type="LabelSettings" id="LabelSettings_wuxof"]
 font_size = 33
 
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 42
 
@@ -31,9 +33,19 @@ offset_left = 94.03253
 offset_top = -72.33269
 offset_right = 329.03253
 offset_bottom = -14.332687
-text = "max number:"
+text = "Your record:"
 label_settings = SubResource("LabelSettings_wuxof")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Version" type="Label" parent="." unique_id=156692068]
+offset_left = 360.0
+offset_top = 1056.0
+offset_right = 661.0
+offset_bottom = 1114.0
+text = "0617270626"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=796297341]
